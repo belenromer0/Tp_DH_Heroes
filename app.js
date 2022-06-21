@@ -3,8 +3,9 @@ const path = require ('path')
 const app = express ();
 const port = 3030
 
+app.use(express.static('public'));
 
-
+/*RUTAS*/
 app.get('/', (req,res)=> res.sendfile(path.join(__dirname, 'view', 'index.html')))
 app.get('/babbage', (req,res)=> res.sendfile(path.join(__dirname, 'view', 'babbage.html')))
 app.get('/berners-lee', (req,res)=> res.sendfile(path.join(__dirname, 'view', 'berners-lee.html')))
